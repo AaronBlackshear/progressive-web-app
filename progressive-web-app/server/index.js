@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const mc = require("./Ctrl");
+const mc = require("./controllers/Ctrl");
 
 const app = express();
 
