@@ -1,8 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import axios from "axios";
 
 class App extends Component {
+  componentDidMount() {
+    axios
+      .get(
+        `http://api.openweathermap.org/data/2.5/forecast?q=dallas,tx,1&appid=416871977cf299500e97014a69960fb9`
+      )
+      .then(res => console.log(res));
+  }
+
   render() {
     return (
       <div className="App">
