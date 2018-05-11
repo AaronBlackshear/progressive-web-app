@@ -4,7 +4,7 @@ import './header.css';
 export default function Header() {
     return (
         <div className='header'>
-            <h1 className='header-heading'>The Weather App</h1>
+            <h1 className='header-heading'>What's my weather?</h1>
         </div>
     )
 }

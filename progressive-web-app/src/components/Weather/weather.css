@@ -1,0 +1,20 @@
+.average-temp{
+    color: white;
+    margin-top: 15px;
+    font-size: 100px;
+}
+
+.temp-container{
+    color: white;
+    font-size: 20px;
+}
+
+.weather-data{
+    color: white;
+    font-weight: 200;
+    margin: 10px;
+}
+
+.clouds{
+    text-transform: capitalize;
+}

@@ -1,0 +1,13 @@
+.footer-text{
+    color: white;
+    font-size: 16px;
+    font-weight: 100px;
+}
+
+.footer-container{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 90vw;
+}

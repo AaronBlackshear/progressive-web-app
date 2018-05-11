@@ -6,13 +6,14 @@ import axios from "axios";
 import Header from "./components/Header/Header";
 import Search from "./components/Search/Search";
 import Weather from "./components/Weather/Weather";
+import Footer from "./components/Footer/Footer";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       city: "",
-      state: "",
+      stateInput: "",
       weatherData: {}
     };
     this.handleCityInput = this.handleCityInput.bind(this);
@@ -20,21 +21,11 @@ class App extends Component {
     this.handleWeatherSearch = this.handleWeatherSearch.bind(this);
   }
 
-  componentDidMount() {
-    // axios
-    //   .get(
-    //     `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.city},${
-    //       this.state.state
-    //     },1&appid=416871977cf299500e97014a69960fb9`
-    //   )
-    //   .then(res => console.log(res));
-  }
-
   handleWeatherSearch() {
     axios
       .get(
         `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.city},${
-          this.state.state
+          this.state.stateInput
         },1&appid=416871977cf299500e97014a69960fb9`
       )
       .then(res => this.setState({ weatherData: res }));
@@ -45,12 +36,12 @@ class App extends Component {
   }
 
   handleStateInput(val) {
-    this.setState({ state: val });
+    this.setState({ stateInput: val });
   }
 
   render() {
     return (
-      <div className="App">
+      <div className="App-container">
         <Header />
         <Search
           handleCityInput={this.handleCityInput}
@@ -58,6 +49,8 @@ class App extends Component {
           handleWeatherSearch={this.handleWeatherSearch}
         />
         <Weather weatherData={this.state.weatherData} />
+        <Footer />
+        <div className="App" />
       </div>
     );
   }

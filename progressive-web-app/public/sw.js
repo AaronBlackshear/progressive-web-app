@@ -15,7 +15,7 @@ self.addEventListener("activate", event => {
 
 self.addEventListener("fetch", event => {
   const url = new URL(event.request.url);
-  console.log(url);
+  // console.log(url);
 
   event.respondWith(
     caches
